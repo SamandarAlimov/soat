@@ -25,7 +25,7 @@ html{
     font-family: 'Poppins', sans-serif;
 }
 body {
-    background: url(images/background.jpg);
+    background: url(background.jpg);
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -64,7 +64,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:url(images/clock.png);
+    background:url(clock.png);
     background-size: cover;
     background-position: center;
     border: 0.4rem solid var(--secondary-color);
