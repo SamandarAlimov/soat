@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -169,4 +169,61 @@
         updateClock();
     </script>
 </body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>SAMOS vaqti</title>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</head>
+<body onload="initliveClock()">
+   <div class="container">
+    <div class="left_div">
+    <div class="greetings">
+        <h1 id="greetings">Assalomu Alaykum!</h1>
+    </div>
+    <div class="clock">
+        <div class="hour">
+            <div class="hh" id="hh"></div>
+        </div>
+        <div class="min">
+            <div class="mm" id="mm"></div>
+        </div>
+        <div class="sec">
+            <div class="ss" id="ss"></div>
+        </div>
+    </div>
+    <div class="showdatetime" >
+        <div class="date">
+            <span id="day">Kun</span>,
+            <span id="month">Oy</span>
+            <span id="date">00</span>,
+            <span id="year">Yil</span>
+        </div>
+        <div class="time">
+            <span id="hour">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+            <span id="period">AM</span>
+        </div>
+    </div>
+    </div>
+    <div class="right_div">
+    <div class="quote"> 
+        <h2>BUGUNGI IQTIBOS</h2>
+        <p id="quote">Har bir yangi kun – yangi imkoniyat. Bugun o‘z orzularing sari bir qadam tashla.</p>
+        <h3 id="author">Muallif, Samandar ibn Otabek.</h3>
+        <button id="btn">Yangi Iqtibos</button>
+    </div>          
+    </div>
+   </div>
+   <script src="script.js"></script>  
+</body>   
 </html>
