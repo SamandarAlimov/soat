@@ -1,14 +1,15 @@
-/* --------------- Dynamic Greetings  --------------------- */
+/* --------------- Dinamik Salomlashuv  --------------------- */
 let greetings = document.querySelector("#greetings");
 
 let liveTime = new Date().getHours();
-let greeting = liveTime >= 5 && liveTime < 12 ? "Good Morning!" : 
-liveTime >= 12 && liveTime < 18 ? "Good Afternoon!" :
-liveTime >= 18 && liveTime < 21 ? "Good Evening!" : "Good Night!";
+let greeting = liveTime >= 5 && liveTime < 12 ? "Xayrli tong!" : 
+liveTime >= 12 && liveTime < 18 ? "Xayrli kun!" :
+liveTime >= 18 && liveTime < 21 ? "Xayrli kech!" : "Xayrli tun!";
 
 greetings.innerHTML = greeting;
-/* --------------- End Dynamic Greetings  --------------------- */
-/* --------------- clock  --------------------- */
+/* --------------- Salomlashuv tugadi  --------------------- */
+
+/* --------------- Soat  --------------------- */
 const deg = 6;
 const ho = document.querySelector('#hh');
 const mi = document.querySelector('#mm');
@@ -23,9 +24,10 @@ setInterval(() => {
     ho.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
     mi.style.transform = `rotateZ(${mm}deg)`;
     se.style.transform = `rotateZ(${ss}deg)`;
-})
-/* --------------- End clock  --------------------- */
-/* --------------- Date Time  --------------------- */
+});
+/* --------------- Soat tugadi  --------------------- */
+
+/* --------------- Sana va Vaqt  --------------------- */
 function liveClock(){
     var liveDate = new Date();
     var showDay = liveDate.getDay(),
@@ -37,40 +39,40 @@ function liveClock(){
         showSeconds = liveDate.getSeconds(),
         showPeriod = "AM";
 
-        if(showHours == 0){
-            showHours = 12;
-        }
-        if(showHours > 12){
-            showHours = showHours - 12;
-            showPeriod = "PM";
-        }
+    if(showHours == 0){
+        showHours = 12;
+    }
+    if(showHours > 12){
+        showHours = showHours - 12;
+        showPeriod = "PM";
+    }
 
-        Number.prototype.pad = function(digits){
-            for(var n = this.toString(); n.length < digits; n = 0 + n);
-            return n;
-        }
+    Number.prototype.pad = function(digits){
+        for(var n = this.toString(); n.length < digits; n = 0 + n);
+        return n;
+    };
 
+    var oylar = ["Yanvar", "Fevral", "Mart", "Aprel", "May", "Iyun", "Iyul",
+                 "Avgust", "Sentabr", "Oktabr", "Noyabr", "Dekabr"];
+    var hafta = ["Yakshanba", "Dushanba", "Seshanba", "Chorshanba", "Payshanba", "Juma", "Shanba"];
 
-        var months = ["January", "February", "March", "April", "May", "June", "July",
-                       "Augest", "September", "October", "November", "December"];
-        var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var idNames = ["day", "month", "date", "year", "hour", "minutes", 
+                   "seconds", "period"];
+    
+    var valueNames = [hafta[showDay], oylar[showMonth], showDate.pad(2), showYear, showHours.pad(2), showMinutes.pad(2), 
+                   showSeconds.pad(2), showPeriod];
 
-        var idNames = ["day", "month", "date", "year", "hour", "minutes", 
-                       "seconds", "period"];
-        
-        var valueNames = [week[showDay], months[showMonth], showDate.pad(2), showYear, showHours.pad(2), showMinutes.pad(2), 
-                       showSeconds.pad(2), showPeriod];
-
-        for(var i = 0; i < idNames.length; i++)
-        document.getElementById(idNames[i]).firstChild.nodeValue = valueNames[i];               
+    for(var i = 0; i < idNames.length; i++)
+    document.getElementById(idNames[i]).firstChild.nodeValue = valueNames[i];               
 }
 
 function initliveClock(){
     liveClock();
     window.setInterval("liveClock()", 1);
 }
-/* --------------- End Date Time  --------------------- */
-/* --------------- Quote  --------------------- */
+/* --------------- Sana va Vaqt tugadi  --------------------- */
+
+/* --------------- Iqtibos (Quote)  --------------------- */
 let quote = document.getElementById("quote");
 let author = document.getElementById("author");
 let btn = document.getElementById("btn");
@@ -89,4 +91,4 @@ let getQuote = () => {
 window.addEventListener("load", getQuote);
 btn.addEventListener("click", getQuote);
 window.setInterval("getQuote()", 20000);
-/* --------------- End Quote  --------------------- */
+/* --------------- Iqtibos tugadi  --------------------- */
