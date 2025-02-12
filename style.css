@@ -25,7 +25,7 @@ html{
     font-family: 'Poppins', sans-serif;
 }
 body {
-    background: url(background.jpg);
+    background: url('background.jpg');
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -64,7 +64,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:url(clock.png);
+    background:url('clock.png');
     background-size: cover;
     background-position: center;
     border: 0.4rem solid var(--secondary-color);
@@ -222,3 +222,39 @@ body {
     color: var(--white-color);
 }
 /* --------------- End Quote  --------------------- */
+
+/* --------------- Responsive Design --------------------- */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem;
+    }
+    .left_div, .right_div {
+        width: 100%;
+    }
+    .clock {
+        width: 20rem;
+        height: 20rem;
+    }
+    .time {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 8px;
+    }
+    .clock {
+        width: 15rem;
+        height: 15rem;
+    }
+    .greetings, .date, .time, .quote h2, .quote p, .quote h3, .quote button {
+        text-align: center;
+        font-size: smaller;
+    }
+    .quote button {
+        padding: 0.8rem 2.5rem;
+    }
+}
